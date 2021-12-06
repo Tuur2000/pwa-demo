@@ -3,18 +3,14 @@
     <h1>This is my cool PWA</h1>
     <img alt="Vue logo" src="./assets/logo.png" />
     <button v-if="updateAvailable">click to update app</button>
-    <p>
-      Juw paragraaf
-    </p>
+    <p>Juw paragraaf</p>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "App",
-  components: {
-  },
+  components: {},
   created() {
     document.addEventListener("swupdatefound", this.updateTheApp, {
       once: true,
@@ -28,6 +24,13 @@ export default {
     updateTheApp(e) {
       this.registration = e.detail;
       this.updateAvailable = true;
+    },
+    // actual update
+    update() {
+      this.updateAvailable = false;
+      if (this.registration || this.registration.waiting) {
+        this.registration.waiting.postMessage({ type: "SKIP_WAITING" });
+      }
     },
   },
 };
