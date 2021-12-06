@@ -4,7 +4,11 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <button v-if="updateAvailable" @click="update">click to update app</button>
     <p>Juw paragraaf ARTHUR juww lol</p>
-  </div>
+    <p>Juw paragraaf ARTHUR juww lol</p>
+    <p>Juw paragraaf ARTHUR juww lol</p>
+    <p>Juw paragraaf ARTHUR juww lol</p>
+    <p>Juw paragraaf ARTHUR juww lol</p>
+    <p>Juw paragraaf ARTHUR juww lol</p>
 </template>
 
 <script>
