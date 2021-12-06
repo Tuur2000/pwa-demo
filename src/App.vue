@@ -19,6 +19,7 @@ export default {
   data: () => ({
     registration: null,
     updateAvailable: false,
+    isRefreshing: false,
   }),
   methods: {
     updateTheApp(e) {
@@ -32,6 +33,13 @@ export default {
         this.registration.waiting.postMessage({ type: "SKIP_WAITING" });
       }
     },
+  },
+  created() {
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (this.isRefreshing) return;
+      this.isRefreshing = true;
+      window.location.reload();
+    });
   },
 };
 </script>
