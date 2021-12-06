@@ -11,11 +11,6 @@
 export default {
   name: "App",
   components: {},
-  created() {
-    document.addEventListener("swupdatefound", this.updateTheApp, {
-      once: true,
-    });
-  },
   data: () => ({
     registration: null,
     updateAvailable: false,
