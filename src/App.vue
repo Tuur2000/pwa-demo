@@ -3,6 +3,9 @@
     <h1>This is my cool PWA</h1>
     <img alt="Vue logo" src="./assets/logo.png" />
     <button v-if="updateAvailable">click to update app</button>
+    <p>
+      Juw paragraaf
+    </p>
   </div>
 </template>
 
